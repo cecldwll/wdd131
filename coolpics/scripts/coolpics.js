@@ -51,7 +51,7 @@ function viewHandler(event) {
 
   // construct the new image file name by adding "-full.jpeg" to the first part of the array from the previous step
   const fullImageSrc = `${parts[0]}-full.jpeg`;
-  const altText = imgElement.alt;
+  const altText = "big picture of " + imgElement.alt;
 
   // insert the viewerTemplate into the top of the body element
   const viewerHTML = viewerTemplate(fullImageSrc, altText);
