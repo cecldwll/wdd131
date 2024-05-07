@@ -60,7 +60,7 @@ main {
   padding: 20px;
 }
 
-img {
+main img {
   border: 8px solid white;
   box-shadow: 5px 5px 10px black;
   margin: 20px;
@@ -79,6 +79,41 @@ footer {
 a:link,
 a:visited {
   color: var(--text-light);
+}
+
+.hide {
+  display: none;
+}
+
+.viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  place-items: center;
+  overflow: hidden;
+}
+
+.close-viewer {
+  color: var(--text-light);
+  font-size: 1.5em;
+  grid-row: 1/2;
+  justify-self: end;
+  padding: 50px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.viewer img {
+  grid-row: 2/3;
+  max-height: 100%;
+  max-width: 90%;
+  margin: auto;
+  object-fit: contain;
 }
 
 @media only screen and (max-width: 934px) and (min-width: 700px) {
@@ -118,5 +153,20 @@ a:visited {
   .gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .viewer {
+    top: 5%;
+    left: 10%;
+    right: 10%;
+    bottom: 5%;
+  }
+
+  .viewer img {
+    max-height: 90%;
+    max-width: 90%;
+    padding: 0 5% 10% 5%;
+    object-fit: contain;
+    overflow: auto;
   }
 }
