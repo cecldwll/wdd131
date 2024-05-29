@@ -14,7 +14,6 @@ steps.map((step) => {
 // })
 
 
-// example 2
 const grades = ["A", "B", "A"];
 function convertGradeToPoints(grade) {
   let points = 0;
