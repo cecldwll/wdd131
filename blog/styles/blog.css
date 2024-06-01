@@ -29,6 +29,7 @@ h1 {
   font-family: var(--title-font);
   font-size: 75px;
   word-spacing: 10px;
+  letter-spacing: 3px;
   color: var(--primary-color);
   padding: 50px;
 }
@@ -66,9 +67,24 @@ nav a {
 .review {
   display: grid;
   grid-template-columns: 1fr 2fr; /* Details on left, book content on right */
-  gap: 5rem;
+  gap: 30px;
   padding: 25px;
   padding-bottom: 35px;
+}
+
+.details {
+  text-align: right;
+  border-right: 5px solid var(--accent1-color);
+  padding-right: 30px;
+}
+
+.date {
+  font-size: 25px;
+}
+
+.filter-form {
+  border: 5px solid var(--accent1-color);
+  margin-top: 25px;
 }
 
 /* Main Body Styling */
@@ -86,8 +102,11 @@ p {
 }
 
 img {
-  padding: 10px;
-  padding-left: 30px;
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 .skiptocontent {
@@ -99,3 +118,5 @@ img {
   left: auto;
   top: 0;
 }
+
+
