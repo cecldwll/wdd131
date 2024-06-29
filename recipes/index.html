@@ -19,46 +19,16 @@
 
 <body>
     <header>
-        <img src="images/recipe-book.png" alt="Recipe Book Logo">
-        <h1>RecipeBook</h1>
+      <h1>Recipe Book</h1>
+      <div>
+        <input type="text" id="search-input" placeholder="Search recipes...">
+        <button id="search-button">Search</button>
+      </div>
     </header>
-
     <main>
-        <form class="search-form">
-            <input type="text" placeholder="Find a recipe">
-            <button type="submit">🔍</button>
-        </form>
-
-        <section class="recipe-card">
-            <img src="images/apple-crisp.jpg" alt="Apple Crisp">
-            <div class="recipe-info">
-                <div class="tags">
-                    <span class="tag">dessert</span>
-                </div>
-                <h2>Apple Crisp</h2>
-                <div class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star-empty">☆</span>
-                </div>
-                <p class="description">This apple crisp recipe is a simple yet delicious fall dessert that's great served warm with vanilla ice cream.</p>
-            </div>
-        </section>
+      <div id="recipe-output" class="recipe-container"></div>
     </main>
-
-    <footer>
-        <div class="social">
-            <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
-            <a href="#"><img src="images/instagram_icon.svg" alt="instagram icon"></a>
-            <a href="#"><img src="images/youtube_icon.svg" alt="youtube icon"></a>
-            <a href="#"><img src="images/pinterest_icon.svg" alt="pinterest icon"></a>
-        </div>
-        <p>Recipe icons created by <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Freepik - Flaticon</a></p>
-    </footer>
-
     <script src="scripts/main.js" type="module"></script>
-</body>
+  </body>
 
 </html>
