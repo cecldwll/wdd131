@@ -446,9 +446,6 @@ nav a:hover {
 
 
 
-
-
-
 @media only screen and (max-width: 600px) {
     .container h1, .container h1 a, .container h1 span {
         display: block; 
