@@ -1,9 +1,10 @@
+
 window.addEventListener('load', () => {
     const images = document.querySelectorAll('.bg img');
     const loadingScreen = document.getElementById('loading-screen');
     const starBg = document.querySelector('.star-bg');
 
-    // After the loading screen fades out
+    // Hide loading screen after fade-out
     loadingScreen.addEventListener('transitionend', () => {
         loadingScreen.style.display = 'none';
     });
@@ -13,58 +14,54 @@ window.addEventListener('load', () => {
             img.style.display = 'block';
             img.style.opacity = '1';
             img.style.transform = 'scale(1.05)';
-        }, index * 3000); // Adjust timing as needed
+        }, index * 1000); // Adjusted timing for faster loading
     });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Start the falling stars animation
     startStars();
 
-    // Stop the stars and fade them out before the loading screen fades out
     setTimeout(() => {
         stopStars();
-        const starBg = document.querySelector('.star-bg');
-        starBg.classList.add('fade-out');
-    }, 5500); // Time until the stars start fading out
+        document.querySelector('.star-bg').classList.add('fade-out');
+    }, 5500); // Adjusted timing for faster star fade-out
 
     setTimeout(() => {
         const loadingScreen = document.getElementById('loading-screen');
         loadingScreen.classList.add('fade-out');
 
-        // Wait for the fade-out transition to finish before setting display to 'none'
+        // Hide loading screen after fade-out
         setTimeout(() => {
             loadingScreen.style.display = 'none';
-        }, 3000); // Match this with transition duration
-    }, 5500); // Time until the fade-out starts (including star fade-out time)
+        }, 1000); // Faster fade-out transition
+    }, 5500);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const parentBgE1 = document.querySelector('.bg');
+    const parentBgEl = document.querySelector('.bg');
     const homeLink = document.querySelector('.container .text a:first-child');
     const homeSpan = homeLink.querySelector('span');
     const homeId = homeSpan.getAttribute('data-id');
-    const homeBgE1 = parentBgE1.querySelector(`.id-${homeId}`);
+    const homeBgEl = parentBgEl.querySelector(`.id-${homeId}`);
 
-    parentBgE1.querySelectorAll("img").forEach(img => {
+    parentBgEl.querySelectorAll("img").forEach(img => {
         img.style.display = 'none';
     });
-    homeBgE1.style.display = 'block';
-    animateImage(homeBgE1);
+    homeBgEl.style.display = 'block';
+    animateImage(homeBgEl);
 
     const linksEls = document.querySelectorAll('.container .text a');
     
     linksEls.forEach(link => {
         link.addEventListener('mouseover', (e) => {
-            e.preventDefault(); // Prevent default link behavior
             const id = link.querySelector('span').getAttribute('data-id');
-            const bgE1 = parentBgE1.querySelector(`.id-${id}`);
+            const bgEl = parentBgEl.querySelector(`.id-${id}`);
 
-            parentBgE1.querySelectorAll("img").forEach(img => {
+            parentBgEl.querySelectorAll("img").forEach(img => {
                 img.style.display = 'none';
             });
-            bgE1.style.display = 'block';
-            animateImage(bgE1);
+            bgEl.style.display = 'block';
+            animateImage(bgEl);
         });
     });
 });
@@ -76,8 +73,8 @@ function animateImage(element) {
     let scale = 1;
 
     const animation = setInterval(() => {
-        opacity += 0.04; // Adjust the increment for smoother animation
-        scale += 0.01; // Adjust the increment for smoother animation
+        opacity += 0.04; 
+        scale += 0.01;
 
         if (opacity >= 1) {
             clearInterval(animation);
@@ -86,30 +83,27 @@ function animateImage(element) {
 
         element.style.opacity = opacity;
         element.style.transform = `scale(${scale})`;
-    }, 25); // Adjust the interval for smoother animation
+    }, 25);
 }
 
 function startStars() {
     const starBg = document.querySelector('.star-bg');
-    starBg.style.display = 'block'; // Ensure the star background is visible
-    console.log('Starting stars'); // Debug statement
+    starBg.style.display = 'block'; 
 
     function createStars() {
         for (let i = 0; i < 150; i++) {
             let star = document.createElement('div');
             star.className = 'star';
-            star.style.left = `${Math.random() * 150}vw`;
+            star.style.left = `${Math.random() * 100}vw`; // Adjusted for better performance
             star.style.animationDelay = `${Math.random() * 5}s`;
             starBg.appendChild(star);
-            console.log(`Star ${i} created`); // Debug statement
         }
     }
 
     createStars();
-    console.log(`Total stars: ${starBg.children.length}`); // Debug statement
 }
 
 function stopStars() {
-    const starBg = document.querySelector('.star-bg');
-    starBg.innerHTML = ''; // Remove all star elements
+    document.querySelector('.star-bg').innerHTML = ''; 
 }
+
