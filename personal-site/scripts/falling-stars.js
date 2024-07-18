@@ -18,6 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             loadingScreen.classList.add('fade-out');
             starBg.classList.add('fade-out');
-        }, 3000); // Adjust timing as needed
+        }, 5000); // Adjust timing as needed
     });
 });

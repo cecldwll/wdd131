@@ -13,7 +13,7 @@ window.addEventListener('load', () => {
             img.style.display = 'block';
             img.style.opacity = '1';
             img.style.transform = 'scale(1.05)';
-        }, index * 1000); // Adjust timing as needed
+        }, index * 3000); // Adjust timing as needed
     });
 });
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stopStars();
         const starBg = document.querySelector('.star-bg');
         starBg.classList.add('fade-out');
-    }, 3000); // Time until the stars start fading out
+    }, 5500); // Time until the stars start fading out
 
     setTimeout(() => {
         const loadingScreen = document.getElementById('loading-screen');
@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Wait for the fade-out transition to finish before setting display to 'none'
         setTimeout(() => {
             loadingScreen.style.display = 'none';
-        }, 2000); // Match this with transition duration
-    }, 4000); // Time until the fade-out starts (including star fade-out time)
+        }, 3000); // Match this with transition duration
+    }, 11000); // Time until the fade-out starts (including star fade-out time)
 });
 
 document.addEventListener('DOMContentLoaded', () => {

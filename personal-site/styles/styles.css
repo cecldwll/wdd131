@@ -177,15 +177,16 @@ footer a:hover {
     pointer-events: none;
     z-index: 99999999; /* Just below the loading screen */
     overflow: hidden; /* Ensures stars don't overflow out of the viewport */
-    transition: opacity 2s ease-in-out;
+    transition: opacity 6s ease-in-out;
 }
 
 .star {
     position: absolute;
     top: -20px;
     color: var(--secondary-color);
-    opacity: 0.8;
-    animation: fall 3s linear infinite;
+    opacity: 1;
+    font-size: 1.3rem;
+    animation: fall 5s linear infinite;
 }
 
 .star::before {
@@ -199,14 +200,14 @@ footer a:hover {
 @keyframes fall {
     0% {
         transform: translateY(0) rotate(0deg);
-        opacity: 0.8;
+        opacity: 1;
     }
     80% {
-        opacity: 0.8;
+        opacity: 1;
     }
     100% {
         transform: translateY(100vh) rotate(360deg);
-        opacity: 0.8;
+        opacity: 1;
     }
 }
 
