@@ -2,7 +2,7 @@ let page = 1;
 let fetching = false;
 const container = document.getElementById('the-ball-pit');
 const cols = Array.from(container.getElementsByClassName('really-awesome-container'));
-console.log(cols)
+console.log(cols);
 
 const fetchImageData = async () => {
     try {
@@ -17,21 +17,6 @@ const fetchImageData = async () => {
         throw error;
     }
 };
-
-fetchImageData().then((images) => {
-    if (images.length > 0) {
-        images.forEach((imageData, index) => {
-            createCard(imageData, cols[index % cols.length]);
-        });
-
-        console.log(index % cols.length)
-
-        // Attach event listeners after images are added
-        attachEventListeners();
-    }
-}).catch((error) => {
-    console.error("Error initial fetch:", error);
-});
 
 const createCard = (imageData, col) => {
     const card = document.createElement('div');
@@ -60,8 +45,13 @@ const attachEventListeners = () => {
     const modal = document.querySelector(".modal");
     const full = document.querySelector(".modal-content");
 
+    console.log(previews); // Check if previews are selected
+    console.log(modal); // Check if modal is selected
+    console.log(full); // Check if full is selected
+
     previews.forEach(preview => {
         preview.addEventListener("click", () => {
+            console.log('Image clicked'); // Check if click event is registered
             modal.classList.add("open");
             full.classList.add("open");
             const fullSrc = preview.getAttribute("src");
@@ -70,12 +60,27 @@ const attachEventListeners = () => {
     });
 
     modal.addEventListener("click", (e) => {
+        console.log('Modal clicked'); // Check if modal click event is registered
         if (e.target === modal) {
             modal.classList.remove("open");
             full.classList.remove("open");
         }
     });
 };
+
+fetchImageData().then((images) => {
+    if (images.length > 0) {
+        images.forEach((imageData, idx) => {
+            createCard(imageData, cols[idx % cols.length]);
+        });
+
+        console.log('Images loaded'); // Confirm images are loaded
+        // Attach event listeners after images are added
+        attachEventListeners();
+    }
+}).catch((error) => {
+    console.error("Error initial fetch:", error);
+});
 
 
 
