@@ -61,7 +61,7 @@ const attachEventListeners = () => {
 
     modal.addEventListener("click", (e) => {
         console.log('Modal clicked'); // Check if modal click event is registered
-        if (e.target === modal) {
+        if (e.target === modal || e.target === full) {
             modal.classList.remove("open");
             full.classList.remove("open");
         }
