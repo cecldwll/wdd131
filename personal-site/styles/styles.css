@@ -426,6 +426,7 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .modal.open {
@@ -445,6 +446,13 @@ nav a:hover {
     transform: scale(1);
 }
 
+.data {
+    text-align: center;
+    font-family: var(--paragraph-font);
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+}
 
 
 @media only screen and (max-width: 600px) {
