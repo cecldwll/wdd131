@@ -7,7 +7,7 @@ console.log(cols)
 const fetchImageData = async () => {
     try {
         fetching = true;
-        const response = await fetch ('images/bw.json');
+        const response = await fetch('images/bw.json');
         const data = await response.json();
         fetching = false;
         return data.message;
@@ -22,9 +22,12 @@ fetchImageData().then((images) => {
     if (images.length > 0) {
         images.forEach((imageData, index) => {
             createCard(imageData, cols[index % cols.length]);
-
-            console.log(index % cols.length)
         });
+
+        console.log(index % cols.length)
+
+        // Attach event listeners after images are added
+        attachEventListeners();
     }
 }).catch((error) => {
     console.error("Error initial fetch:", error);
@@ -37,6 +40,7 @@ const createCard = (imageData, col) => {
     const img = document.createElement('img');
     img.src = imageData.src;
     img.alt = imageData.alt;
+    img.classList.add('preview');  // Add class for selecting images later
     img.style.width = "100%";
     img.onerror = function () {
         this.parentElement.style.display = "none";
@@ -50,6 +54,31 @@ const createCard = (imageData, col) => {
 
     col.appendChild(card);
 };
+
+const attachEventListeners = () => {
+    const previews = document.querySelectorAll(".preview");
+    const modal = document.querySelector(".modal");
+    const full = document.querySelector(".modal-content");
+
+    previews.forEach(preview => {
+        preview.addEventListener("click", () => {
+            modal.classList.add("open");
+            full.classList.add("open");
+            const fullSrc = preview.getAttribute("src");
+            full.src = fullSrc;
+        });
+    });
+
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.classList.remove("open");
+            full.classList.remove("open");
+        }
+    });
+};
+
+
+
 
 //Infinite scroll
 // const handleScroll = () => {
