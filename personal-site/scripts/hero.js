@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             loadingScreen.style.display = 'none';
         }, 3000); // Match this with transition duration
-    }, 11000); // Time until the fade-out starts (including star fade-out time)
+    }, 5500); // Time until the fade-out starts (including star fade-out time)
 });
 
 document.addEventListener('DOMContentLoaded', () => {
