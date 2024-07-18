@@ -133,9 +133,9 @@ body {
 
 footer {
     color: white;
+    background: black;
     padding: 60px 0 25px 5%;
     display: flex;
-    align-items: center;
 }
 
 footer p {
@@ -350,21 +350,50 @@ nav a:hover {
     height: 5px;
     margin: 15px 20%;
     background: var(--accent2-color);
-    border-radius: 15%;
+    border-radius: 5%;
 }
 
 #the-ball-pit {
-    width: 100%;
-    columns: 4;
-    column-gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
     padding: 15px;
 }
 
-#the-ball-pit img {
+.really-awesome-container {
+    height: auto;
+    width: calc(100% / 4);
+    display: flex;
+    flex-direction: column;
+    padding: 7px;
+    gap: 15px;
+    position: relative;
+}
+
+.homunculus {
+    height: auto;
+    width: calc(100% / 4);
+    display: flex;
+    flex-direction: column;
+    padding: 7px;
+    gap: 15px;
+    position: relative;
+}
+
+.card {
+    margin: 0;
     width: 100%;
-    margin-bottom: 15px;
+    position: relative;
+}
+  
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
     border-radius: 10px;
-    display: block;
+}
+
+.card:hover .overlay {
+    opacity: 1;
 }
 
 .overlay {
@@ -383,35 +412,6 @@ nav a:hover {
     font-family: var(--paragraph-font);
 }
   
-.really-awesome-container1, .really-awesome-container2, .really-awesome-container3, .really-awesome-container4, .really-awesome-container5, .really-awesome-container6, 
-.really-awesome-container7, .really-awesome-container8, .really-awesome-container9, .really-awesome-container10, .really-awesome-container11, .really-awesome-container12, 
-.really-awesome-container13, .really-awesome-container14, .really-awesome-container15, .really-awesome-container16, .really-awesome-container17 {
-    position: relative;
-}
-  
-.really-awesome-container1:hover .overlay, .really-awesome-container2:hover .overlay, .really-awesome-container3:hover .overlay, .really-awesome-container4:hover .overlay, 
-.really-awesome-container5:hover .overlay, .really-awesome-container6:hover .overlay, .really-awesome-container7:hover .overlay, .really-awesome-container8:hover .overlay, 
-.really-awesome-container9:hover .overlay, .really-awesome-container10:hover .overlay, .really-awesome-container11:hover .overlay, .really-awesome-container12:hover .overlay, 
-.really-awesome-container13:hover .overlay, .really-awesome-container14:hover .overlay, .really-awesome-container15:hover .overlay, .really-awesome-container16:hover .overlay, 
-.really-awesome-container17:hover .overlay {
-    opacity: 1;
-}
-
-.homunculus1, .homunculus2, .homunculus3, .homunculus4, .homunculus5, .homunculus6, .homunculus7, .homunculus8, .homunculus9, .homunculus10, 
-.homunculus11, .homunculus12, .homunculus13, .homunculus14, .homunculus15, .homunculus16, .homunculus17, .homunculus18, .homunculus19, .homunculus20, 
-.homunculus21, .homunculus22, .homunculus23, .homunculus24, .homunculus25, .homunculus26, .homunculus27, .homunculus28, .homunculus29, .homunculus30, 
-.homunculus31, .homunculus32, .homunculus33, .homunculus34, .homunculus35, .homunculus36, .homunculus37, .homunculus38, .homunculus39, .homunculus40 {
-    position: relative;
-}
-
-.homunculus1:hover .overlay, .homunculus2:hover .overlay, .homunculus3:hover .overlay, .homunculus4:hover .overlay, .homunculus5:hover .overlay, .homunculus6:hover .overlay, .homunculus7:hover .overlay, .homunculus8:hover .overlay, .homunculus9:hover .overlay, .homunculus10:hover .overlay, 
-.homunculus11:hover .overlay, .homunculus12:hover .overlay, .homunculus13:hover .overlay, .homunculus14:hover .overlay, .homunculus15:hover .overlay, .homunculus16:hover .overlay, .homunculus17:hover .overlay, .homunculus18:hover .overlay, .homunculus19:hover .overlay, .homunculus20:hover .overlay, 
-.homunculus21:hover .overlay, .homunculus22:hover .overlay, .homunculus23:hover .overlay, .homunculus24:hover .overlay, .homunculus25:hover .overlay, .homunculus26:hover .overlay, .homunculus27:hover .overlay, .homunculus28:hover .overlay, .homunculus29:hover .overlay, .homunculus30:hover .overlay,
-.homunculus31:hover .overlay, .homunculus32:hover .overlay, .homunculus33:hover .overlay, .homunculus34:hover .overlay, .homunculus35:hover .overlay, .homunculus36:hover .overlay, .homunculus37:hover .overlay, .homunculus38:hover .overlay, .homunculus39:hover .overlay, .homunculus40:hover .overlay {
-    opacity: 1;
-}
-
-
 
 
 @media only screen and (max-width: 600px) {
@@ -453,9 +453,9 @@ nav a:hover {
         padding: 10px 15px 10px 15px;
     }
 
-    #the-ball-pit {
-        columns: 2;
-    }
+    /* .really-awesome-container {
+        width: calc(100% / 2);
+    } */
 
     .overlay {
         font-size: 10px;
@@ -490,9 +490,9 @@ nav a:hover {
         margin: 15px 15%;
     }
 
-    #the-ball-pit {
-        columns: 3;
-    }
+    /* .really-awesome-container {
+        width: calc(100% / 3);
+    } */
 
     .overlay {
         font-size: 12px;
